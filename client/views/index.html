@@ -9,17 +9,18 @@
 
     <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
     <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="scripts/client.min.js"></script>
+    <script type="text/javascript" src="scripts/client.js"></script>
+    <script src="scripts/factories/MarketService.js"></script>
+    <script src="scripts/controllers/fake.js"></script>
 
   </head>
   <body>
-    <!-- NAV BAR -->
-    <!-- NAV BAR is a holdover from the base project - could include or remove as time allows -->
-    <!-- <div ng-include="'views/partials/nav.html'"></div> -->
 
     <!-- MAIN CONTENT -->
-    <main ng-view></main>
+    <!-- <main ng-view></main> -->
+    <div ng-controller="fakeController">
 
+    </div>
 
   </body>
 </html>
