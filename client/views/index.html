@@ -9,7 +9,7 @@
 
     <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
     <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="scripts/client.min.js"></script>
+    <script type="text/javascript" src="../scripts/client.js"></script>
 
   </head>
   <body>
@@ -18,7 +18,10 @@
     <!-- <div ng-include="'views/partials/nav.html'"></div> -->
 
     <!-- MAIN CONTENT -->
-    <main ng-view></main>
+
+    <div ng-include = "'templates/marketView.html'">
+
+    </div>
 
 
   </body>
