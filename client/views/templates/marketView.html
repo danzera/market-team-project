@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid personContainer">
   <div class="row">
     <div class="col-md-8 centered"
@@ -5,14 +7,34 @@
       <div class="col-md-2"> {{person.item.Name}}</div>
       <div class="col-md-2"> {{person.item.Cash}}</div>
     </div>
+    <h6>Cart Items</h6>
+    <div ng-controller="MarketController as market">
+    <div class = "row">
+      <div ng-repeat="cartitem in market.cartItemArray">
+        <div class="col-md-3 fruitContainer centered">
+          {{cartitem.name}}<br />
+          {{cartitem.quantity}}<br />
+          ${{cartitem.avePrice}}.00</div>
+      </div>
+    </div>
+  </div>
+
   </div>
 </div>
+
 <h2>Welcome to the Market</h2>
+
+
+
 <h6>Click on an item to add it to your inventory</h6>
 <div ng-controller="MarketController as market">
   <div class = "row">
-    <div ng-repeat="thing in market.item">
-      <div class="col-md-3 fruitContainer">{{thing}}</div>
+    <div ng-repeat="thing in market.marketItemsArray">
+      <div class="col-md-4 fruitContainer">
+        <img src="{{thing.image}}" alt="image of {{thing.name}}">
+        <p><strong>{{thing.name}}</strong></p>
+        <p>${{thing.price}}</p>
+      </div>
     </div>
   </div>
 </div>
