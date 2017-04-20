@@ -33,7 +33,7 @@
       <div class="col-md-4 fruitContainer" ng-click="market.newCartItem(thing)">
         <img ng-src="{{thing.image}}" alt="image of {{thing.name}}">
         <p><strong>{{thing.name}}</strong></p>
-        <p>${{thing.price}}</p>
+        <p>{{thing.price | currency : "$"}}</p>
       </div>
     </div>
   </div>

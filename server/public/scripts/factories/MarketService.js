@@ -1,4 +1,4 @@
-myApp.factory('MarketService', function(){
+myApp.factory('MarketService', function($interval){
   console.log("Hello from the factory.");
 
   // constants
@@ -22,6 +22,7 @@ myApp.factory('MarketService', function(){
 
   intervalPriceChange = () => {
     // loop through array
+
     for (item of marketItemsArray) {
       // determine price change
       let positive = (Math.random() > 0.5) ? 1 : -1;
@@ -45,7 +46,8 @@ myApp.factory('MarketService', function(){
     }
   }
 
-  setInterval(intervalPriceChange, PRICE_CHANGE_INTERVAL);
+  $interval(intervalPriceChange, PRICE_CHANGE_INTERVAL);
+
 
   // parent class
   class MarketItem {

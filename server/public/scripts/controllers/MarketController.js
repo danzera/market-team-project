@@ -7,6 +7,7 @@ myApp.controller('MarketController', ['MarketService', function(MarketService){
 //                  {name: 'Books', quantity: 4, avePrice: 3.50}];
 
 market.marketItemsArray = MarketService.marketItemsArray;
+
 console.log(market.marketItemsArray);
 
 market.cart = MarketService.cart;
