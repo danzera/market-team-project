@@ -73,9 +73,10 @@ myApp.factory('MarketService', function(){
   let jewelry = new Collectible('jewelry', INITIAL_PRICE);
   let wine = new Collectible('wine', INITIAL_PRICE);
 
-  let marketItemsArray = [];
+  let marketItemsArray = [apple, orange, banana, grapes, toaster, lamp, clock,
+    bluRayPlayer, comicBook, fancyStuffedAnimal, jewelry, wine];
 
   return {
-
+    marketItemsArray
   };
 });

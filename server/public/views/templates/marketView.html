@@ -29,8 +29,12 @@
 <h6>Click on an item to add it to your inventory</h6>
 <div ng-controller="MarketController as market">
   <div class = "row">
-    <div ng-repeat="thing in market.item">
-      <div class="col-md-3 fruitContainer">{{thing}}</div>
+    <div ng-repeat="thing in market.marketItemsArray">
+      <div class="col-md-4 fruitContainer">
+        <img src="{{thing.image}}" alt="image of {{thing.name}}">
+        <p><strong>{{thing.name}}</strong></p>
+        <p>${{thing.price}}</p>
+      </div>
     </div>
   </div>
 </div>
