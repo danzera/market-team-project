@@ -1,4 +1,4 @@
-myApp.factory('MarketService', function(){
+myApp.factory('MarketService', function($interval){
   console.log("Hello from the factory.");
 
   // constants
@@ -19,9 +19,33 @@ myApp.factory('MarketService', function(){
       return Math.floor(Math.random() * (1 + max - min) + min);
     }
   }
-  // setInterval(function() {
-  //   console.log("Hello");
-  // }, PRICE_CHANGE_INTERVAL);
+
+  intervalPriceChange = () => {
+    // loop through array
+    for (item of inventoryObject.marketItemsArray) {
+      // determine price change
+      let positive = (Math.random() > 0.5) ? 1 : -1;
+      let priceChange = positive * Util.randomNumber(MIN_PRICE_CHANGE, MAX_PRICE_CHANGE);
+      // apply price change
+      let oldPrice = item.getPrice();
+      console.log(item.name, 'old price:', oldPrice);
+      let newPrice = oldPrice + priceChange;
+      item.setPrice(newPrice);
+      checkMinMaxPrice(item);
+      console.log(item.name, 'new price:', item.getPrice());
+    } // end for-loop
+  }
+
+  checkMinMaxPrice = (item) => {
+    let currentPrice = item.getPrice();
+    if (currentPrice > MAX_PRICE) {
+      item.setPrice(MAX_PRICE);
+    } else if (currentPrice < MIN_PRICE) {
+      item.setPrice(MIN_PRICE);
+    }
+  }
+
+  $interval(intervalPriceChange, PRICE_CHANGE_INTERVAL);
 
   // parent class
   class MarketItem {
@@ -75,10 +99,10 @@ myApp.factory('MarketService', function(){
   let jewelry = new Collectible('jewelry', 'images/jewelry.jpg', INITIAL_PRICE);
   let wine = new Collectible('wine', 'images/wine.jpg', INITIAL_PRICE);
 
-  let marketItemsArray = [apple, orange, banana, grapes, toaster, lamp, clock,
-    bluRayPlayer, comicBook, fancyStuffedAnimal, jewelry, wine];
+  let inventoryObject = {marketItemsArray: [apple, orange, banana, grapes, toaster, lamp, clock,
+    bluRayPlayer, comicBook, fancyStuffedAnimal, jewelry, wine]};
 
   return {
-    marketItemsArray
+    inventoryObject
   };
 });
