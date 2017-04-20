@@ -1,3 +1,4 @@
-myApp.controller('MenuController', [function(){
-    console.log('HEY! You. You are at the Menu Controller');
+myApp.controller('PersonController', [function(){
+    var person = this;
+    person.item = {Name: 'Person', Cash: 100};
 }]);

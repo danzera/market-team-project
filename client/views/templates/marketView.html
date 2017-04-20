@@ -1,4 +1,19 @@
-<p>MarketView</p>
-<div ng-repeat="thing in market.item">
- {{thing}}
+<div class="container-fluid personContainer">
+  <div class="row">
+    <div class="col-md-8 centered"
+    <div ng-controller="PersonController as person">
+      <div class="col-md-2"> {{person.item.Name}}</div>
+      <div class="col-md-2"> {{person.item.Cash}}</div>
+    </div>
+  </div>
+</div>
+<h2>Welcome to the Market</h2>
+<h6>Click on an item to add it to your inventory</h6>
+<div ng-controller="MarketController as market">
+  <div class = "row">
+    <div ng-repeat="thing in market.item">
+      <div class="col-md-3 fruitContainer">{{thing}}</div>
+    </div>
+  </div>
+</div>
 </div>
