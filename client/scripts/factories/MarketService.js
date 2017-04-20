@@ -10,7 +10,7 @@ myApp.factory('MarketService', function(){
   const MIN_PRICE_CHANGE = 0.01;
   const MAX_PRICE_CHANGE = 0.50;
   // time between price changes
-  const PRICE_CHANGE_INTERVAL = 5000;
+  const PRICE_CHANGE_INTERVAL = 15000;
 
   class Util {
     constructor() {}
@@ -102,7 +102,56 @@ myApp.factory('MarketService', function(){
   let marketItemsArray = [apple, orange, banana, grapes, toaster, lamp, clock,
     bluRayPlayer, comicBook, fancyStuffedAnimal, jewelry, wine];
 
+  class Cart {
+    constructor(itemNamesArray) {
+      this.cartItemsArray = [];
+      for (let item of itemNamesArray) {
+        let newCartItem = new CartItem(item);
+        this.cartItemsArray.push(newCartItem);
+      }
+  }
+
+    addItem(thing, quantityAdded = 1) {
+      let name = thing.name;
+      console.log(name);
+      let price = thing.price;
+      console.log(price);
+      for (let item of this.cartItemsArray) {
+        console.log("item", item);
+        if (item.name === name) {
+          // takes price property from clicked thing & updates average price
+          console.log("item's price", item.avgPrice);
+          item.changeAvgPrice(price, quantityAdded);
+          // increments quantity
+          item.changeQuantity(quantityAdded);
+        }
+      }
+    }
+  }
+
+class CartItem {
+  constructor(name, quantity = 0, avgPrice = 0) {
+    this.name = name;
+    this.quantity = quantity;
+    this.avgPrice = avgPrice;
+  }
+  changeAvgPrice(currentPrice, quantityAdded) {
+    console.log("quantity added", quantityAdded)
+    let totalPaid = this.quantity * this.avgPrice;
+    let newTotalPaid = totalPaid + currentPrice;
+    this.avgPrice = newTotalPaid / (this.quantity + quantityAdded);
+  }//end changeAvgPrice
+
+  changeQuantity(quantityAdded) {
+    this.quantity += quantityAdded;
+  }
+}// end cartItem
+
+let cart = new Cart(['apple', 'orange', 'banana', 'grapes', 'toaster', 'lamp',
+  'clock', 'blu ray player', 'comic book', 'fancy stuffed animal', 'jewelry', 'wine'])
+
   return {
-    marketItemsArray
+    marketItemsArray,
+    cart
   };
 });
