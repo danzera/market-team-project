@@ -51,8 +51,16 @@ module.exports = function(grunt){
         src: ['client.js',
               '**/*.js'],
         dest: 'server/public/scripts'
+      },
+      images: {
+        expand: true,
+        cwd: 'client/images/',
+        src: ['**/*.png',
+              '**/*.jpg'],
+        dest: 'server/public/images/'
       }
     },
+
     watch: {
       files: [
         'client/**/*.*'
