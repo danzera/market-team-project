@@ -1,0 +1,39 @@
+
+
+<div class="container-fluid personContainer">
+  <h1>Cash: $100.00</h1>
+  <div class="row">
+    <div class="col-md-10 centered">
+    <h2>Cart Items</h2>
+    <div ng-controller="MarketController as market">
+    <div class = "row">
+      <div ng-repeat="cartitem in market.cartItemArray">
+        <div class="col-md-4 cartcontainer centered">
+          <p><strong>Item: </strong>{{cartitem.name}}</p>
+          <p><strong>Quantity: </strong>{{cartitem.quantity}}</p>
+          <p><strong>Average: </strong>{{cartitem.avgPrice | currency : "$"}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<h2>Welcome to the Market</h2>
+
+
+
+<h6>Click on an item to add it to your inventory</h6>
+<div ng-controller="MarketController as market">
+  <div class = "row">
+    <div ng-repeat="thing in market.marketItemsArray">
+      <div class="col-md-4 fruitContainer" ng-click="market.newCartItem(thing)">
+        <img ng-src="{{thing.image}}" alt="image of {{thing.name}}">
+        <p><strong>{{thing.name}}</strong></p>
+        <p>{{thing.price | currency : "$"}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

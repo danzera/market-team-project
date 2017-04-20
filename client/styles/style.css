@@ -1,4 +1,41 @@
-.diner-nav > ul > li {
+.centered {
+  margin: 0 auto;
+}
+
+.personContainer {
+  background-color: lightblue;
+  padding: 50px;
+}
+
+.fruitContainer {
+  background-color: lightyellow;
+  height: 200px;
+  width: 150px;
+  margin: 10px;
+  border-radius: 3px;
+  float: left;
+}
+
+.fruitContainer:hover {
+  background-color: yellow;
+}
+
+.fruitContainer:active {
+  background-color: cyan;
+  transform: translateY(4px);
+}
+
+img {
+  height: 100px;
   width: 100px;
-  display: inline-block;
+}
+
+.cartcontainer {
+  background-color: lightyellow;
+  height: 120px;
+  width: 120px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  float: left;
 }

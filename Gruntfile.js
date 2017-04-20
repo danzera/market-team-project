@@ -1,13 +1,6 @@
 module.exports = function(grunt){
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    uglify: {
-      build: {
-        src: ['client/scripts/*.js',
-              'client/scripts/**/*.js'],
-        dest: 'server/public/scripts/client.min.js'
-      }
-    },
     copy: {
       html: {
         expand: true,
@@ -21,6 +14,13 @@ module.exports = function(grunt){
         cwd: 'client/styles',
         src: ['style.css'],
         dest: 'server/public/styles/'
+      },
+      scripts: {
+        expand: true,
+        cwd: 'client/scripts',
+        src: ['*.js',
+             '**/*.js'],
+        dest: 'server/public/scripts/'
       },
       bootstrap: {
         expand: true,
@@ -44,19 +44,33 @@ module.exports = function(grunt){
               'angular-route.min.js',
               'angular-route.min.js.map'],
         dest: 'server/public/vendors/angular-route/'
+      },
+      javascript: {
+        expand: true,
+        cwd: 'client/scripts/',
+        src: ['client.js',
+              '**/*.js'],
+        dest: 'server/public/scripts'
+      },
+      images: {
+        expand: true,
+        cwd: 'client/images/',
+        src: ['**/*.png',
+              '**/*.jpg'],
+        dest: 'server/public/images/'
       }
     },
+
     watch: {
       files: [
         'client/**/*.*'
       ],
-      tasks: ['uglify', 'copy']
+      tasks: ['copy']
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['uglify', 'copy', 'watch']);
+  grunt.registerTask('default', ['copy', 'watch']);
 };
