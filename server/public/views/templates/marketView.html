@@ -12,10 +12,10 @@
 <div ng-controller="MarketController as market">
   <div class = "row">
     <div ng-repeat="thing in market.marketItemsArray">
-      <div class="col-md-3 fruitContainer">
+      <div class="col-md-4 fruitContainer">
         <img src="{{thing.image}}" alt="image of {{thing.name}}">
-        <p>{{thing.name}}</p>
-        <p>{{thing.price}}</p>
+        <p><strong>{{thing.name}}</strong></p>
+        <p>${{thing.price}}</p>
       </div>
     </div>
   </div>
