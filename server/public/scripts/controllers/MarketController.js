@@ -11,6 +11,9 @@ market.cartItemArray = [{name: 'apple', quantity: 2, avePrice: 5},
 market.marketItemsArray = MarketService.marketItemsArray;
 console.log(market.marketItemsArray);
 
+ market.newCartItem = function (object){
+  console.log('NG Click "clicked"', object);
+};
 
 
 }]);

@@ -17,6 +17,15 @@
   float: left;
 }
 
+.fruitContainer:hover {
+  background-color: yellow;
+}
+
+.fruitContainer:active {
+  background-color: cyan;
+  transform: translateY(4px);
+}
+
 img {
   height: 100px;
   width: 100px;
