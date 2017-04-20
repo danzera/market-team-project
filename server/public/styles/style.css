@@ -1,4 +1,17 @@
-.diner-nav > ul > li {
+.centered {
+  margin: 0 auto;
+}
+
+.personContainer {
+  background-color: lightblue;
+  height: 100px;
+  width: 100%;
+}
+
+.fruitContainer {
+  background-color: lightyellow;
+  height: 100px;
   width: 100px;
-  display: inline-block;
+  margin: 10px;
+  float: left;
 }

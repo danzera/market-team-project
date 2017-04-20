@@ -7,12 +7,7 @@ myApp.config(['$routeProvider', function($routeProvider){
             controller: 'MarketController',
             controllerAs: 'market'
         })
-        .when('/personView', {
-            templateUrl : 'views/templates/personView.html',
-            controller: 'PersonController',
-            controllerAs: 'blog'
-        })
         .otherwise({
-            redirectTo: 'marketView'
+            redirectTo: '/marketView'
         });
 }]);
