@@ -1,5 +1,5 @@
 myApp.factory('MarketService', function(){
-  console.log("hi");
+  console.log("Hello from the factory.");
 
   // constants
   // market item prices

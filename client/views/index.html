@@ -3,21 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Totally Mongo Marketplace</title>
-
+    <!--stylesheets-->
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <!--angular-->
     <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
     <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
+    <!--main client file-->
     <script type="text/javascript" src="scripts/client.js"></script>
+    <!--Factory-->
     <script src="scripts/factories/MarketService.js"></script>
-    <script type="text/javascript" src="scripts/controllers/marketController.js"></script>
+    <!--Controllers-->
+    <script type="text/javascript" src="scripts/controllers/MarketController.js"></script>
     <script type="text/javascript" src="scripts/controllers/personController.js"></script>
-
   </head>
   <body>
-
     <!-- MAIN CONTENT -->
-
     <div ng-include = "'views/templates/marketView.html'"></div>
     <main class="container" ng-view></main>
   </body>
