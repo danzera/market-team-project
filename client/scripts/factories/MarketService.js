@@ -40,7 +40,7 @@ myApp.factory('MarketService', function(){
     }
   }
 
-  // child class
+  // extension classes of MarketItem
   class Fruit extends MarketItem {
     constructor(name, price) {
       super(name, price, 'fruit');
@@ -59,12 +59,103 @@ myApp.factory('MarketService', function(){
     }
   }
 
-  let papaya = new Fruit('papaya', 2);
-  console.log(papaya);
+  // extension classes of categorical market items
+  // FRUITS
+  class Apple extends Fruit {
+    constructor() {
+      super('Apple', INITIAL_PRICE);
+    }
+  }
+
+  class Orange extends Fruit {
+    constructor() {
+      super('Orange', INITIAL_PRICE);
+    }
+  }
+
+  class Banana extends Fruit {
+    constructor() {
+      super('Banana', INITIAL_PRICE);
+    }
+  }
+
+  class Grapes extends Fruit {
+    constructor() {
+      super('Grapes', INITIAL_PRICE);
+    }
+  }
+
+  // SMALL ELECTRONICS
+  class Toaster extends SmallElectronic {
+    constructor() {
+      super('Toaster', INITIAL_PRICE);
+    }
+  }
+
+  class Lamp extends SmallElectronic {
+    constructor() {
+      super('Lamp', INITIAL_PRICE);
+    }
+  }
+
+  class Clock extends SmallElectronic {
+    constructor() {
+      super('Clock', INITIAL_PRICE);
+    }
+  }
+
+  class BluRayPlayer extends SmallElectronic {
+    constructor() {
+      super('BluRay Player', INITIAL_PRICE);
+    }
+  }
+
+  class ComicBook extends Collectible {
+    constructor() {
+      super('Comic Book', INITIAL_PRICE);
+    }
+  }
+
+  class FancyStuffedAnimal extends Collectible {
+    constructor() {
+      super('Fancy Stuffed Animal', INITIAL_PRICE);
+    }
+  }
+
+  class Jewelry extends Collectible {
+    constructor() {
+      super('Jewelry', INITIAL_PRICE);
+    }
+  }
+
+  class Wine extends Collectible {
+    constructor() {
+      super('Wine', INITIAL_PRICE);
+    }
+  }
+
+
+
+  // let oranges = new Fruit('Oranges', INITIAL_PRICE);
+  // let bananas = new Fruit('Bananas', INITIAL_PRICE);
+  // let grapes = new Fruit('Grapes', INITIAL_PRICE);
+  // let toasters = new SmallElectronic('Toasters', INITIAL_PRICE);
+  // let lamps = new SmallElectronic('Lamps', INITIAL_PRICE);
+  // let clocks = new SmallElectronic('Clocks', INITIAL_PRICE);
+  // let bluRayPlayers = new SmallElectronic('Blu Ray Players', INITIAL_PRICE);
 
   return {
-    Fruit,
-    SmallElectronic,
-    Collectible
+    Apple,
+    Orange,
+    Banana,
+    Grapes,
+    Toaster,
+    Lamp,
+    Clock,
+    BluRayPlayer,
+    ComicBook,
+    FancyStuffedAnimal,
+    Jewelry,
+    Wine
   };
 });
