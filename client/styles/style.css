@@ -5,8 +5,6 @@
 .personContainer {
   background-color: lightblue;
   padding: 50px;
-  height: 300px;
-  width: 100%;
 }
 
 .fruitContainer {
@@ -14,6 +12,7 @@
   height: 200px;
   width: 150px;
   margin: 10px;
+  border-radius: 3px;
   float: left;
 }
 
@@ -29,4 +28,14 @@
 img {
   height: 100px;
   width: 100px;
+}
+
+.cartcontainer {
+  background-color: lightyellow;
+  height: 120px;
+  width: 120px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  float: left;
 }

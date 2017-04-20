@@ -1,20 +1,18 @@
 
 
 <div class="container-fluid personContainer">
+  <h1>Cash: $100.00</h1>
   <div class="row">
-    <div class="col-md-8 centered"
-    <div ng-controller="PersonController as person">
-      <div class="col-md-2"> {{person.item.Name}}</div>
-      <div class="col-md-2"> {{person.item.Cash}}</div>
-    </div>
-    <h6>Cart Items</h6>
+    <div class="col-md-10 centered">
+    <h2>Cart Items</h2>
     <div ng-controller="MarketController as market">
     <div class = "row">
       <div ng-repeat="cartitem in market.cartItemArray">
-        <div class="col-md-3 fruitContainer centered">
-          {{cartitem.name}}<br />
-          {{cartitem.quantity}}<br />
-          ${{cartitem.avePrice}}.00</div>
+        <div class="col-md-4 cartcontainer centered">
+          <p><strong>Item: </strong>{{cartitem.name}}</p>
+          <p><strong>Quantity: </strong>{{cartitem.quantity}}</p>
+          <p><strong>Average: </strong>{{cartitem.avgPrice | currency : "$"}}</p>
+        </div>
       </div>
     </div>
   </div>

@@ -29,11 +29,9 @@ myApp.factory('MarketService', function($interval){
       let priceChange = positive * Util.randomNumber(MIN_PRICE_CHANGE, MAX_PRICE_CHANGE);
       // apply price change
       let oldPrice = item.getPrice();
-      console.log(item.name, 'old price:', oldPrice);
       let newPrice = oldPrice + priceChange;
       item.setPrice(newPrice);
       checkMinMaxPrice(item);
-      console.log(item.name, 'new price:', item.getPrice());
     } // end for-loop
   }
 
