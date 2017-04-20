@@ -4,14 +4,20 @@
 
 .personContainer {
   background-color: lightblue;
-  height: 100px;
+  padding: 50px;
+  height: 300px;
   width: 100%;
 }
 
 .fruitContainer {
   background-color: lightyellow;
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 150px;
   margin: 10px;
   float: left;
+}
+
+img {
+  height: 100px;
+  width: 100px;
 }
