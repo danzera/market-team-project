@@ -11,14 +11,16 @@
     <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
     <script src="scripts/factories/MarketService.js"></script>
-    <script src="scripts/controllers/fake.js"></script>
+    <script type="text/javascript" src="../scripts/client.js"></script>
 
   </head>
   <body>
 
     <!-- MAIN CONTENT -->
-    <!-- <main ng-view></main> -->
-    <div ng-controller="fakeController">
+
+    <div ng-include = "'templates/marketView.html'">
+
+    </div>
 
     </div>
 
