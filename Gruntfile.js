@@ -1,13 +1,6 @@
 module.exports = function(grunt){
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    uglify: {
-      build: {
-        src: ['client/scripts/*.js',
-              'client/scripts/**/*.js'],
-        dest: 'server/public/scripts/client.min.js'
-      }
-    },
     copy: {
       html: {
         expand: true,
@@ -44,13 +37,19 @@ module.exports = function(grunt){
               'angular-route.min.js',
               'angular-route.min.js.map'],
         dest: 'server/public/vendors/angular-route/'
+      },
+      javascript: {
+        expand: true,
+        cwd: 'client/scripts/',
+        src: ['client.js'],
+        dest: 'server/public/scripts'
       }
     },
     watch: {
       files: [
         'client/**/*.*'
       ],
-      tasks: ['uglify', 'copy']
+      tasks: ['copy']
     }
   });
 
@@ -58,5 +57,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['uglify', 'copy', 'watch']);
+  grunt.registerTask('default', ['copy', 'watch']);
 };
