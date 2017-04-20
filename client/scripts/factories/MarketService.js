@@ -25,10 +25,12 @@ myApp.factory('MarketService', function(){
 
   // parent class
   class MarketItem {
-    constructor(name, price, category) {
+    constructor(name, image, price, category) {
       this.name = name;
+      this.image = image;
       this.price = price;
       this.category = category;
+
     }
 
     getPrice() {
@@ -42,36 +44,36 @@ myApp.factory('MarketService', function(){
 
   // extension classes of MarketItem
   class Fruit extends MarketItem {
-    constructor(name, price) {
-      super(name, price, 'fruit');
+    constructor(name, image, price) {
+      super(name, image, price, 'fruit');
     }
   }
 
   class SmallElectronic extends MarketItem {
-    constructor(name, price) {
-      super(name, price, 'small electronic');
+    constructor(name, image, price) {
+      super(name, image, price, 'small electronic');
     }
   }
 
   class Collectible extends MarketItem {
-    constructor(name, price) {
-      super(name, price, 'collectible');
+    constructor(name, image, price) {
+      super(name, image, price, 'collectible');
     }
   }
 
   // instantiation of objects from 3 subclasses
-  let apple = new Fruit('apple', INITIAL_PRICE);
-  let orange = new Fruit('orange', INITIAL_PRICE);
-  let banana = new Fruit('banana', INITIAL_PRICE);
-  let grapes = new Fruit('grapes', INITIAL_PRICE);
-  let toaster = new SmallElectronic('toaster', INITIAL_PRICE);
-  let lamp = new SmallElectronic('lamp', INITIAL_PRICE);
-  let clock = new SmallElectronic('clock', INITIAL_PRICE);
-  let bluRayPlayer = new SmallElectronic('blu ray player', INITIAL_PRICE);
-  let comicBook = new Collectible('comic book', INITIAL_PRICE);
-  let fancyStuffedAnimal = new Collectible('fancy stuffed animal', INITIAL_PRICE);
-  let jewelry = new Collectible('jewelry', INITIAL_PRICE);
-  let wine = new Collectible('wine', INITIAL_PRICE);
+  let apple = new Fruit('apple', 'images/apple.png', INITIAL_PRICE);
+  let orange = new Fruit('orange', 'images/orange.png', INITIAL_PRICE);
+  let banana = new Fruit('banana', 'images/banana.png', INITIAL_PRICE);
+  let grapes = new Fruit('grapes', 'images/grapes.jpg', INITIAL_PRICE);
+  let toaster = new SmallElectronic('toaster', 'images/toaster.jpg', INITIAL_PRICE);
+  let lamp = new SmallElectronic('lamp', 'images/lamp.jpg', INITIAL_PRICE);
+  let clock = new SmallElectronic('clock', 'images/clock.png', INITIAL_PRICE);
+  let bluRayPlayer = new SmallElectronic('blu ray player', 'images/bluray.jpg', INITIAL_PRICE);
+  let comicBook = new Collectible('comic book', 'images/comics.jpg', INITIAL_PRICE);
+  let fancyStuffedAnimal = new Collectible('fancy stuffed animal', 'images/stuffed.jpg', INITIAL_PRICE);
+  let jewelry = new Collectible('jewelry', 'images/jewelry.jpg', INITIAL_PRICE);
+  let wine = new Collectible('wine', 'images/wine.jpg', INITIAL_PRICE);
 
   let marketItemsArray = [apple, orange, banana, grapes, toaster, lamp, clock,
     bluRayPlayer, comicBook, fancyStuffedAnimal, jewelry, wine];
