@@ -1,3 +1,6 @@
-<div ng-repeat="item in market">
-  item: {{item}}
+  <div ng-controller="MarketController">
+  <p>MarketView</p>
+  <div ng-repeat="thing in market.item">
+    {{thing}}
+  </div>
 </div>

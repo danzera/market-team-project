@@ -1,4 +1,4 @@
-myApp.controller('MarketController', ['DataService', function(DataService){
-  let market = this;
-  market = ['Apple', 'Banana', 'Orange'];
+myApp.controller('MarketController', [function(){
+  var market = this;
+  market.item = ['Apple', 'Banana', 'Orange'];
 }]);
